@@ -6,9 +6,9 @@ from_drives = [
     "Main Drive",
 ]
 to_drives = [
-    "Backup Drive#1",
-    "Backup Drive#2",
-    "Backup Drive#3",
+    "Backup Drive_1",
+    "Backup Drive_2",
+    "Backup Drive_3",
 ]
 
 cfg = open(cfg_path).read()
