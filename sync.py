@@ -3,10 +3,12 @@ import logging
 
 cfg_path = "./rclone.conf"
 from_drives = [
-    "Leech Drive",
+    "Main Drive",
 ]
 to_drives = [
-    "Cloud Group",
+    "Backup Drive#1",
+    "Backup Drive#2",
+    "Backup Drive#3",
 ]
 
 cfg = open(cfg_path).read()
