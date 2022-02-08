@@ -7,8 +7,6 @@ from_drives = [
 ]
 to_drives = [
     "Backup Drive_1",
-    "Backup Drive_2",
-    "Backup Drive_3",
 ]
 
 cfg = open(cfg_path).read()
