@@ -2,13 +2,13 @@ name: RClone Sync
 on:
   workflow_dispatch:
   schedule:
-    - cron:  '10 11 * * *'
+    - cron:  '30 6 * * *'
 jobs:
   run-sync-service:
     runs-on: ubuntu-latest
     steps:
     - name: send custom message
-      uses: actions/checkout@v2
+      uses: actions/checkout@master
       with:
         to: ${{ secrets.TELEGRAM_TO }}
         token: ${{ secrets.TELEGRAM_TOKEN }}
