@@ -1,0 +1,32 @@
+name: RClone Sync
+on:
+  workflow_dispatch:
+  schedule:
+    - cron:  '30 6 * * *'
+jobs:
+  run-sync-service:
+    runs-on: ubuntu-latest
+    steps:
+    - name: send custom message
+      uses: actions/checkout@master
+      with:
+        to: ${{ secrets.TELEGRAM_TO }}
+        token: ${{ secrets.TELEGRAM_TOKEN }}
+        message: |
+          The ${{ github.event_name }} event triggered final step.
+          echo This event is a pull request that had an assignee removed.
+      - name: Install RClone
+        run: |
+          curl https://rclone.org/install.sh | sudo bash
+          rclone help
+      - name: Checkout repository code
+        uses: actions/checkout@v2
+      - name: Downloading config file
+        run: |
+          wget ${{ secrets.CONF_URL }} -O rclone.conf
+      - name: List files in the repository
+        run: |
+          ls ${{ github.workspace }}
+      - name: Start sync
+        run: |
+          python3 sync.py
