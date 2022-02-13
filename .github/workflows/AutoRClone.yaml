@@ -12,6 +12,12 @@ jobs:
           curl https://rclone.org/install.sh | sudo bash
       - name: Checkout repository code
         uses: actions/checkout@v2
+       - name: Cd Into Repo
+        run: |
+          cd ${{ github.workspace }}
+      - name: Install Requirements
+        run: |
+          pip3 install -r requirements.txt
       - name: Downloading config file
         run: |
           wget ${{ secrets.CONF_URL }} -O rclone.conf
