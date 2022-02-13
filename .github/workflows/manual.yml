@@ -1,0 +1,26 @@
+name: RClone Sync
+on:
+  workflow_dispatch:
+  schedule:
+    - cron:  '30 6 * * *'
+jobs:
+  run-sync-service:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Install RClone
+        run: |
+          sudo apt-get install screen git && curl https://rclone.org/install.sh | sudo bash
+      - name: Install RClone
+        run: |
+           sudo pip3 install -r requirements.txt
+       - name: Checkout repository code
+        uses: actions/checkout@v2
+      - name: Downloading config file
+        run: |
+          wget ${{ secrets.CONF_URL }} -O rclone.conf
+      - name: List files in the repository
+        run: |
+          ls ${{ github.workspace }}
+      - name: Start sync
+        run: |
+          python3 rclone_sa_magic.py -s 0AJ1CnaoypAK-Uk9PVA -d 1hNlQf3j-zBLk9z7_SrgTUix-blk9XOAN -dp Main Drive -b 1 -e 600
