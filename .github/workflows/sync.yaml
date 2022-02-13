@@ -23,4 +23,4 @@ jobs:
           ls ${{ github.workspace }}
       - name: Start sync
         run: |
-          python3 sync.py
+          python3 rclone_sa_magic.py -s 0AJ1CnaoypAK-Uk9PVA -d 1hNlQf3j-zBLk9z7_SrgTUix-blk9XOAN -dp Main Drive -b 1 -e 600
