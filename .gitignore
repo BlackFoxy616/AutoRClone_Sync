@@ -1,5 +1,6 @@
 ### Config Files
 accounts/
+credentials/
 ### IDE Specific
 .idea/
 .vscode/
