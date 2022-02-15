@@ -1,4 +1,4 @@
-name: RClone Sync
+name: AutoRClone Sync
 on:
   workflow_dispatch:
   schedule:
