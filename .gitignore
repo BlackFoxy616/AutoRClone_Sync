@@ -1,8 +1,8 @@
 ### Config Files
 rclone.conf
 config.env
-/accounts
-/credentials
+accounts/
+credentials/
 
 ### IDE Specific
 .idea/
