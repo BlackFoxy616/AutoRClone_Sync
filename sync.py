@@ -3,12 +3,10 @@ import logging
 
 cfg_path = "./rclone.conf"
 from_drives = [
-    "Main Drive",
     "Fotos_DB",
 ]
 to_drives = [
     "Backup Drive_1",
-    "Backup Drive_2",
 ]
 
 cfg = open(cfg_path).read()
