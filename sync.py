@@ -3,6 +3,7 @@ import logging
 
 cfg_path = "./rclone.conf"
 from_drives = [
+    "Main Drive",
     "Fotos_DB",
 ]
 to_drives = [
