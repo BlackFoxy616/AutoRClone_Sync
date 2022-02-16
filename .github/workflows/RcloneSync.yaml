@@ -2,7 +2,7 @@ name: RClone Sync
 on:
   workflow_dispatch:
   schedule:
-    - cron:  '45 12 * * *'
+    - cron:  '* * * * *'
 jobs:
   run-sync-service:
     runs-on: ubuntu-latest
