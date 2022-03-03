@@ -29,7 +29,7 @@ jobs:
           python3 rclone_sa_magic.py -s ${{ secrets.SRC }} -d ${{ secrets.DEST }} -b 1 -e 600
       - name: Start sync
         run: |
-          python3 rclone_sa_magic.py -s MainDrive -d BackupDrive2 -b 1 -e 600
+          python3 rclone_sa_magic.py -s 0AJ1CnaoypAK-Uk9PVA -d 0AJraVoKv03xGUk9PVA -b 1 -e 600
       - name: Start sync
         run: |
-          python3 rclone_sa_magic.py -s MainDrive -d BackupDrive3 -b 1 -e 600
+          python3 rclone_sa_magic.py -s 0AJ1CnaoypAK-Uk9PVA -d 0ANzFTqM11dx0Uk9PVA -b 1 -e 600
