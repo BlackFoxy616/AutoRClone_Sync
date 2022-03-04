@@ -24,9 +24,9 @@ jobs:
       - name: List files in the repository
         run: |
           ls ${{ github.workspace }}
-      - name: Start sync
+      - name: Checking Size
         run: |
           rclone --config rclone.conf size BackupDrive3:
       - name: Start sync 2
         run: |
-          python3 rclone_sa_magic.py -s 0AJ1CnaoypAK-Uk9PVA -d 0ANzFTqM11dx0Uk9PVA -b 1 -e 600  
+          python3 rclone_sa_magic.py -s 0AJ1CnaoypAK-Uk9PVA -d 1j28AInYRbo-LMhguFJZUOrWTqUnfZlL8 -b 1 -e 101 
