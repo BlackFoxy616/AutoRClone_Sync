@@ -27,12 +27,3 @@ jobs:
       - name: Start sync
         run: |
           python3 rclone_sa_magic.py -s ${{ secrets.SRC }} -d ${{ secrets.DEST }} -b 1 -e 600
-      - name: Sync 2 File Check
-        run: |
-          rclone --config rclone.conf size 0AJ1CnaoypAK-Uk9PVA:
-      - name: Start sync 2
-        run: |
-          python3 rclone_sa_magic.py -s  -d 0AJraVoKv03xGUk9PVA -b 1 -e 600
-      - name: Start sync 3
-        run: |
-          python3 rclone_sa_magic.py -s 0AJ1CnaoypAK-Uk9PVA -d 0ANzFTqM11dx0Uk9PVA -b 1 -e 600
