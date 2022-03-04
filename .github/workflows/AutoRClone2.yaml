@@ -1,0 +1,32 @@
+name: AutoRClone Sync
+on:
+  workflow_dispatch:
+  schedule:
+    - cron:  '30 6 * * *'
+jobs:
+  run-sync-service:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Install RClone
+        run: |
+          curl https://rclone.org/install.sh | sudo bash
+      - name: Checkout repository code
+        uses: actions/checkout@v2
+      - name: Cd Into Repo
+        run: |
+          cd ${{ github.workspace }}
+      - name: Install Requirements
+        run: |
+          pip3 install -r requirements.txt
+      - name: Downloading config file
+        run: |
+          wget ${{ secrets.CONF_URL }} -O rclone.conf
+      - name: List files in the repository
+        run: |
+          ls ${{ github.workspace }}
+      - name: Start sync
+        run: |
+          rclone --config rclone.conf size 0AJraVoKv03xGUk9PVA:
+      - name: Start sync 2
+        run: |
+          python3 rclone_sa_magic.py -s 0AJ1CnaoypAK-Uk9PVA -d 0AJraVoKv03xGUk9PVA -b 1 -e 600  
