@@ -29,4 +29,4 @@ jobs:
           rclone --config rclone.conf size BackupDrive3:
       - name: Start sync 2
         run: |
-          python3 rclone_sa_magic.py -s 0AJ1CnaoypAK-Uk9PVA -d 1j28AInYRbo-LMhguFJZUOrWTqUnfZlL8 -b 1 -e 101 
+          python3 rclone_sa_magic.py -s 0AJ1CnaoypAK-Uk9PVA -d 0ANzFTqM11dx0Uk9PVA-dp Backup -b 1 -e 101 
