@@ -7,10 +7,14 @@
 # Description
 Put simply, it regularly triggers GitHub Actions to execute a script that pair-wise iterates and runs `rclone sync` over defined drives. 
 
+---
+
 # Dependencies 🧰
 - AutoRclone
 - python3
-- brain
+- Potato brain
+
+---
 
 # Usage 👨‍💻
 1. Create an `rclone.conf` file that complies with [RClone](https://rclone.org/).
@@ -22,6 +26,3 @@ Put simply, it regularly triggers GitHub Actions to execute a script that pair-w
 7. Profit 💯
 
 ---
-
-Note: The [`sync.sh`](sync.sh) file is a bash equivalent of the [`sync.py`](sync.py). If you want to tinker with this project
-but you don't like/know Python3, feel free to start there. 
