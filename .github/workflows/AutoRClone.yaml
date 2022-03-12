@@ -26,8 +26,8 @@ jobs:
           SA_ZIP: ${{ secrets.SA_ZIP }}
         if: "${{ env.SA_ZIP != '' }}"
         run: |
-          wget -qq ${{ secrets.SA_ZIP }} -O accounts.zip
-          unzip -qq accounts.zip
+          wget  ${{ secrets.SA_ZIP }} -O accounts.zip
+          unzip accounts.zip
       - name: List files in the repository
         run: |
           ls ${{ github.workspace }}
