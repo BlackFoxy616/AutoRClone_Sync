@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&height=300&text=%20RClone%20Mirror%20Manager%20&fontAlignY=35&desc=Backup%20your%20Beloved%20RClone%20Drives%20to%20Multiple%20Mirrors&animation=fadeIn&fontColor=0c1017" alt="RClone Mirror Manager"/>
+<img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&height=300&text= AutoRClone_Sync &fontAlignY=35&desc=Backup%20your%20Beloved%20RClone%20Drives%20to%20Multiple%20Mirrors&animation=fadeIn&fontColor=0c1017" alt="RClone Mirror Manager"/>
 
 </div>
 
@@ -8,7 +8,7 @@
 Put simply, it regularly triggers GitHub Actions to execute a script that pair-wise iterates and runs `rclone sync` over defined drives. 
 
 # Dependencies 🧰
-- rclone
+- AutoRclone
 - python3
 - brain
 
