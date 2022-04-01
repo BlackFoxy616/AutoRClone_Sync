@@ -82,7 +82,7 @@ def parse_args():
     parser.add_argument('-spi', '--source_path_id', type=str, default="",
                         help='the folder path id (rather than name) of source. In Google Drive.')
 
-    parser.add_argument('-sa', '--service_account', type=str, default="accounts",
+    parser.add_argument('-sa', '--service_account', type=str, default="/home/runner/work/AutoRClone_Sync/AutoRClone_Sync/accounts",
                         help='the folder path of json files for service accounts.')
     parser.add_argument('-cp', '--check_path', action="store_true",
                         help='if check src/dst path or not.')
