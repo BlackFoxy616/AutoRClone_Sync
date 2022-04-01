@@ -10,6 +10,13 @@ jobs:
       - name: Install RClone
         run: |
           curl https://rclone.org/install.sh | sudo bash
+      - name: Downloading SA Accounts Zip (optional)
+        env:
+          SA_ZIP: ${{ secrets.SA_ZIP }}
+        if: "${{ env.SA_ZIP != '' }}"
+        run: |
+          wget -qq ${{ secrets.SA_ZIP }} -O accounts.zip
+          unzip -qq accounts.zip
       - name: Checkout repository code
         uses: actions/checkout@v2
       - name: Cd Into Repo
@@ -21,13 +28,6 @@ jobs:
       - name: Downloading config file
         run: |
           wget ${{ secrets.CONF_URL }} -O rclone.conf
-      - name: Downloading SA Accounts Zip (optional)
-        env:
-          SA_ZIP: ${{ secrets.SA_ZIP }}
-        if: "${{ env.SA_ZIP != '' }}"
-        run: |
-          wget -qq ${{ secrets.SA_ZIP }} -O accounts.zip
-          unzip -qq accounts.zip
       - name: List files in the repository
         run: |
           ls ${{ github.workspace }}
