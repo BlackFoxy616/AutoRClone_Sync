@@ -21,12 +21,16 @@ jobs:
       - name: Downloading config file
         run: |
           wget -qq ${{ secrets.CONF_URL }} -O rclone.conf
+      - name: Downloading SA Accounts Zip (optional)
+        env:
+          SA_ZIP: ${{ secrets.SA_ZIP }}
+        if: "${{ env.SA_ZIP != '' }}"
+        run: |
+           sudo wget -qq ${{ secrets.SA_ZIP }} -O accounts.zip
+           sudo unzip -qq accounts.zip
       - name: List files in the repository
         run: |
           ls ${{ github.workspace }}
-      - name: Checking Size
-        run: |
-          rclone --config rclone.conf size MainDrive:
       - name: Start sync
         run: |
-          python3 rclone_sa_magic.py -s ${{ secrets.SRC }} -d ${{ secrets.DEST }} -b 1 -e 600
+          sudo python3 rclone_sa_magic.py -s ${{ secrets.SRC }} -d ${{ secrets.DEST }} -b 1 -e 600
