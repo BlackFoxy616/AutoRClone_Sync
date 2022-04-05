@@ -1,4 +1,4 @@
-name: AutoRClone Sync
+name: AutoRClone MainBackup Sync
 on:
   workflow_dispatch:
   schedule:
