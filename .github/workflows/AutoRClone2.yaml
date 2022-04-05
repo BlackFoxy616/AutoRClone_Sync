@@ -1,4 +1,4 @@
-name: AutoRClone GdIndex_td Sync 2 
+name: AutoRClone Gd Sync 2 
 on:
   workflow_dispatch:
   schedule:
