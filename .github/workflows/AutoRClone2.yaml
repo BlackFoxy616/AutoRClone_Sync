@@ -28,12 +28,9 @@ jobs:
       - name: Downloading config file
         run: |
           wget ${{ secrets.CONF_URL }} -O rclone.conf
-      - name: Permission
-        run: |
-          chmod +x /accounts
       - name: List files in the repository
         run: |
           ls ${{ github.workspace }}/accounts
       - name: Start sync 2
         run: |
-          python3 rclone_sa_magic.py -s ${{ secrets.SRC }} -d ${{ secrets.DEST2 }} -dp Backup -b 1 -e 100 
+         sudo python3 rclone_sa_magic.py -s ${{ secrets.SRC }} -d ${{ secrets.DEST2 }} -dp Backup -b 1 -e 100 
