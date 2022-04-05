@@ -33,4 +33,4 @@ jobs:
           ls ${{ github.workspace }}
       - name: Start sync
         run: |
-          sudo python3 rclone_sa_magic.py -s ${{ secrets.SRC }} -d ${{ secrets.DEST }} -b 1 -e 600
+          sudo python3 rclone_sa_magic.py -s ${{ secrets.SRC }} -d ${{ secrets.DEST }} -dp Backup -b 1 -e 600
