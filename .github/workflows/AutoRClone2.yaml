@@ -1,8 +1,8 @@
-name: AutoRClone Gd Sync 2 
+name: AutoRClone Gd Sync 2
 on:
   workflow_dispatch:
   schedule:
-    - cron:  '30 6 * * *'
+    - cron:  '00 7 * * *'
 jobs:
   run-sync-service:
     runs-on: ubuntu-latest
@@ -18,6 +18,9 @@ jobs:
       - name: Install Requirements
         run: |
           pip3 install -r requirements.txt
+      - name: Downloading config file
+        run: |
+          wget -qq ${{ secrets.CONF_URL }} -O rclone.conf
       - name: Downloading SA Accounts Zip (optional)
         env:
           SA_ZIP: ${{ secrets.SA_ZIP }}
@@ -25,12 +28,9 @@ jobs:
         run: |
            sudo wget -qq ${{ secrets.SA_ZIP }} -O accounts.zip
            sudo unzip -qq accounts.zip
-      - name: Downloading config file
-        run: |
-          wget ${{ secrets.CONF_URL }} -O rclone.conf
       - name: List files in the repository
         run: |
-          ls ${{ github.workspace }}/accounts
-      - name: Start sync 2
+          ls ${{ github.workspace }}
+      - name: Start sync
         run: |
-         sudo python3 rclone_sa_magic.py -s ${{ secrets.SRC }} -d ${{ secrets.DEST2 }} -dp Backup -b 1 -e 100 
+          sudo python3 rclone_sa_magic.py -s ${{ secrets.SRC }} -d ${{ secrets.DEST2 }} -dp Backup -b 1 -e 600
