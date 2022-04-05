@@ -28,7 +28,7 @@ jobs:
       - name: Downloading config file
         run: |
           wget ${{ secrets.CONF_URL }} -O rclone.conf
-      -name: Permission
+      - name: Permission
         run: |
           chmod +x /accounts
       - name: List files in the repository
