@@ -2,7 +2,7 @@ name: AutoRClone Sync 3
 on:
   workflow_dispatch:
   schedule:
-    - cron:  '30 6 * * *'
+    - cron:  '30 7 * * *'
 jobs:
   run-sync-service:
     runs-on: ubuntu-latest
@@ -33,4 +33,4 @@ jobs:
           ls ${{ github.workspace }}
       - name: Start sync
         run: |
-          sudo python3 rclone_sa_magic.py -s ${{ secrets.SRC }} -d ${{ secrets.DEST }} -dp Backup -b 1 -e 600
+          sudo python3 rclone_sa_magic.py -s ${{ secrets.SRC }} -d ${{ secrets.DEST3 }} -dp Backup -b 1 -e 600
